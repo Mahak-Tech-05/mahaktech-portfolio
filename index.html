@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MahakTech - Professional Web Solutions</title>
+<link rel="icon" href="favicon.jpeg" type="image/jpg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+body {
+  background: #0f0c29;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: rgba(10, 15, 40, 0.95);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  background: linear-gradient(45deg, #00f0ff, #ff00c8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  position: relative;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #00f0ff, #ff00c8);
+  left: 0;
+  bottom: -6px;
+  transition: width 0.4s;
+}
+.nav-links a:hover::after { width: 100%; }
+.nav-links a:hover { color: #00f0ff; }
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background: radial-gradient(circle at top right, #1e215d, #0f0c29);
+}
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 22px;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+.hero-btn {
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(45deg, #00f0ff, #ff00c8);
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.hero-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
+}
+
+/* Sections */
+section {
+  padding: 80px 20px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+/* Cards */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+.card {
+  background: #1b1e4a;
+  padding: 30px;
+  border-radius: 15px;
+  border: 2px solid #202461;
+  transition: 0.4s;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px #00f0ff;
+  border-color: #00f0ff;
+}
+.card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  background: linear-gradient(45deg, #00f0ff, #ff00c8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.card p {
+  font-size: 16px;
+  color: #ccc;
+}
+
+/* Contact */
+.contact-btn {
+  padding: 15px 30px;
+  font-size: 18px;
+  margin: 15px;
+  background: linear-gradient(45deg, #00f0ff, #ff00c8);
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.contact-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #00f0ff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar { flex-direction: column; }
+  .nav-links { flex-direction: column; margin-top: 15px; }
+  .hero h1 { font-size: 36px; }
+  .hero p { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+<nav class="navbar">
+  <div class="logo">Mahak<span style="color:#00f0ff;">Tech</span></div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+</header>
+
+<section id="home" class="hero">
+  <h1>Welcome to Mahak<span style="color:#00f0ff;">Tech</span></h1>
+  <p>Your Partner in Professional Website Development</p>
+  <a href="#services" class="hero-btn">Explore Services</a>
+</section>
+
+<section id="services">
+  <h2>Our <span style="color:#00f0ff;">Services</span></h2>
+  <div class="container">
+    <div class="card"><h3>Custom Websites</h3><p>Responsive, SEO-friendly business websites tailored for you.</p></div>
+    <div class="card"><h3>E-commerce Stores</h3><p>Modern online stores with secure payment gateways.</p></div>
+    <div class="card"><h3>Landing Pages</h3><p>High-converting landing pages built to increase your sales.</p></div>
+    <div class="card"><h3>SEO Optimization</h3><p>Improve your search rankings with our SEO services.</p></div>
+  <div class="card"><h3>And Many More</h3><p>And many more services we provide you just at low price from the market.</p></div>
+ 
+</div>
+</section>
+
+<section id="projects">
+  <h2>Our <span style="color:#00f0ff;">Projects</span></h2>
+  <div class="container">
+    <div class="card"><h3>Portfolio Websites</h3><p>Modern portfolios for freelancers and entrepreneurs.</p></div>
+    <div class="card"><h3>Salon & Local Business</h3><p>Beautiful websites for small businesses with booking systems.</p></div>
+    <div class="card"><h3>Tech Startup Showcases</h3><p>AI tools and product showcases for modern tech startups.</p></div>
+<div class="card"><h3>Mentorship</h3><p>Helping Students to help them to complete there projects. Want to see click on below button <br><a href="project_showcase.html" class="contact-btn">Project Showcase</a></br></p></div>
+ 
+</div>
+</section>
+
+<section id="contact">
+  <h2>Let’s <span style="color:#00f0ff;">Connect</span></h2>
+  <p>Ready to build your online presence? Let’s talk.</p>
+  <a href="mailto:saxenamahak612@gmail.com" class="contact-btn">📧 Email Us</a>
+  <a href="https://www.linkedin.com/in/mahak-tech-377406365" class="contact-btn" target="_blank">LinkedIn</a>
+</section>
+
+<script>
+// Scroll Animation
+const sections = document.querySelectorAll("section");
+function fadeInOnScroll() {
+  const trigger = window.innerHeight * 0.8;
+  sections.forEach(sec => {
+    const secTop = sec.getBoundingClientRect().top;
+    if (secTop < trigger) sec.classList.add("active");
+  });
+}
+fadeInOnScroll();
+window.addEventListener("scroll", fadeInOnScroll);
+</script>
+
+</body>
+</html> 
