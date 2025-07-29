@@ -1,242 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MahakTech - Professional Web Solutions</title>
-<link rel="icon" href="favicon.jpeg" type="image/jpg">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MahakTech - Professional Web Development, App Development, and Tech Services to empower your business." />
+  <meta name="keywords" content="MahakTech, Web Development, App Development, SEO, Digital Solutions, Startup, Portfolio" />
+  <meta name="author" content="MahakTech" />
+  <title>MahakTech | Professional Tech Services</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  
+  
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif;}
+    html {scroll-behavior: smooth;}
+    body {background: #0d0d0d; color: #fff;}
+    header {background: #111; padding: 20px 40px; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center;}
+    .logo {font-size: 28px; font-weight: bold; color: #00e6e6;}
+    nav a {margin-left: 20px; color: #eee; text-decoration: none; transition: 0.3s;}
+    nav a:hover {color: #00e6e6;}
+    section {padding: 60px 40px;}
+    .hero {min-height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;}
+    .hero h1 {font-size: 40px; margin-bottom: 15px;}
+    .hero span#typed {color: #00e6e6; font-weight: bold;}
+    .hero p {max-width: 600px; font-size: 18px; color: #ccc;}
+    .btn {margin-top: 20px; padding: 12px 30px; background: #00e6e6; color: #111; border: none; font-weight: bold; cursor: pointer; border-radius: 6px; transition: 0.3s;}
+    .btn:hover {background: #00cccc;}
+    .section-title {font-size: 32px; color: #00e6e6; margin-bottom: 30px; text-align: center;}
+    .services, .projects {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;}
+    .card {background: #1a1a1a; padding: 20px; border-radius: 10px; transition: 0.3s ease; border: 1px solid #333;}
+    .card:hover {transform: translateY(-5px); border-color: #00e6e6;}
+    .contact form {max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 15px;}
+    .contact input, .contact textarea {padding: 10px; border: none; border-radius: 6px; background: #2b2b2b; color: #fff;}
+    .contact button {background: #00e6e6; color: #111; font-weight: bold; padding: 10px; border: none; border-radius: 6px; cursor: pointer;}
+    footer {text-align: center; padding: 20px; background: #111; font-size: 14px; color: #aaa;}
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  scroll-behavior: smooth;
-}
-body {
-  background: #0f0c29;
-  color: #fff;
-  overflow-x: hidden;
-}
-
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 8%;
-  background: rgba(10, 15, 40, 0.95);
-  backdrop-filter: blur(8px);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-.logo {
-  font-size: 32px;
-  font-weight: 700;
-  background: linear-gradient(45deg, #00f0ff, #ff00c8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
-.nav-links a {
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: 600;
-  position: relative;
-}
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 3px;
-  background: linear-gradient(90deg, #00f0ff, #ff00c8);
-  left: 0;
-  bottom: -6px;
-  transition: width 0.4s;
-}
-.nav-links a:hover::after { width: 100%; }
-.nav-links a:hover { color: #00f0ff; }
-
-/* Hero Section */
-.hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  text-align: center;
-  background: radial-gradient(circle at top right, #1e215d, #0f0c29);
-}
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-.hero p {
-  font-size: 22px;
-  color: #ccc;
-  margin-bottom: 30px;
-}
-.hero-btn {
-  padding: 15px 30px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #fff;
-  background: linear-gradient(45deg, #00f0ff, #ff00c8);
-  border-radius: 50px;
-  text-decoration: none;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.hero-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
-}
-
-/* Sections */
-section {
-  padding: 80px 20px;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 1s ease;
-}
-section.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-h2 {
-  font-size: 40px;
-  margin-bottom: 20px;
-}
-
-/* Cards */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
-.card {
-  background: #1b1e4a;
-  padding: 30px;
-  border-radius: 15px;
-  border: 2px solid #202461;
-  transition: 0.4s;
-}
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 20px #00f0ff;
-  border-color: #00f0ff;
-}
-.card h3 {
-  font-size: 24px;
-  margin-bottom: 15px;
-  background: linear-gradient(45deg, #00f0ff, #ff00c8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.card p {
-  font-size: 16px;
-  color: #ccc;
-}
-
-/* Contact */
-.contact-btn {
-  padding: 15px 30px;
-  font-size: 18px;
-  margin: 15px;
-  background: linear-gradient(45deg, #00f0ff, #ff00c8);
-  color: #fff;
-  border-radius: 50px;
-  text-decoration: none;
-  display: inline-block;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.contact-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px #00f0ff;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .navbar { flex-direction: column; }
-  .nav-links { flex-direction: column; margin-top: 15px; }
-  .hero h1 { font-size: 36px; }
-  .hero p { font-size: 18px; }
-}
-</style>
+    @media (max-width: 600px) {
+      header {flex-direction: column; align-items: flex-start;}
+      nav a {margin: 10px 0 0 0; display: block;}
+      .hero h1 {font-size: 28px;}
+    }
+  </style>
 </head>
 <body>
 
-<header>
-<nav class="navbar">
-  <div class="logo">Mahak<span style="color:#00f0ff;">Tech</span></div>
-  <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-</header>
+  <header>
+    <div class="logo">MahakTech</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<section id="home" class="hero">
-  <h1>Welcome to Mahak<span style="color:#00f0ff;">Tech</span></h1>
-  <p>Your Partner in Professional Website Development</p>
-  <a href="#services" class="hero-btn">Explore Services</a>
-</section>
+  <section class="hero" id="home">
+    <h1>We Provide <span id="typed">Professional Tech Solutions</span></h1>
+    <p>MahakTech is your partner in digital growth — from web development to automation, we build it all to help you scale.</p>
+    <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">Work With Us</button>
+  </section>
 
-<section id="services">
-  <h2>Our <span style="color:#00f0ff;">Services</span></h2>
-  <div class="container">
-    <div class="card"><h3>Custom Websites</h3><p>Responsive, SEO-friendly business websites tailored for you.</p></div>
-    <div class="card"><h3>E-commerce Stores</h3><p>Modern online stores with secure payment gateways.</p></div>
-    <div class="card"><h3>Landing Pages</h3><p>High-converting landing pages built to increase your sales.</p></div>
-    <div class="card"><h3>SEO Optimization</h3><p>Improve your search rankings with our SEO services.</p></div>
-  <div class="card"><h3>And Many More</h3><p>And many more services we provide you just at low price from the market.</p></div>
- 
-</div>
-</section>
+  <section id="services">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Web Development</h3>
+        <p>Responsive, modern websites that attract and convert.</p>
+      </div>
+      <div class="card">
+        <h3>App Development</h3>
+        <p>Android & iOS apps for businesses and startups.</p>
+      </div>
+      <div class="card">
+        <h3>SEO Optimization</h3>
+        <p>Boost your online visibility with technical SEO.</p>
+      </div>
+      <div class="card">
+        <h3>Automation Tools</h3>
+        <p>Save time with smart tools tailored to your business.</p>
+      </div>
+      <div class="card">
+        <h3>Portfolio Websites</h3>
+        <p>Showcase your brand or work with custom portfolios.</p>
+      </div>
+    </div>
+  </section>
 
-<section id="projects">
-  <h2>Our <span style="color:#00f0ff;">Projects</span></h2>
-  <div class="container">
-    <div class="card"><h3>Portfolio Websites</h3><p>Modern portfolios for freelancers and entrepreneurs.</p></div>
-    <div class="card"><h3>Salon & Local Business</h3><p>Beautiful websites for small businesses with booking systems.</p></div>
-    <div class="card"><h3>Tech Startup Showcases</h3><p>AI tools and product showcases for modern tech startups.</p></div>
-<div class="card"><h3>Mentorship</h3><p>Helping Students to help them to complete there projects. Want to see click on below button <br><a href="project_showcase.html" class="contact-btn">Project Showcase</a></br></p></div>
- 
-</div>
-</section>
+  <section id="projects">
+    <h2 class="section-title">Our Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>Beauty Studio Website</h3>
+        <p>A luxury salon site with admin, gallery, and booking system.</p>
+      </div>
+      <div class="card">
+        <h3>Student Learning Platform</h3>
+        <p>Courses, progress tracking, doubt solving, and certification system.</p>
+      </div>
+      <div class="card">
+        <h3>Guardian AI</h3>
+        <p>Emergency response web app using AI to detect crisis events.</p>
+      </div>
+    </div>
+  </section>
 
-<section id="contact">
-  <h2>Let’s <span style="color:#00f0ff;">Connect</span></h2>
-  <p>Ready to build your online presence? Let’s talk.</p>
-  <a href="mailto:saxenamahak612@gmail.com" class="contact-btn">📧 Email Us</a>
-  <a href="https://www.linkedin.com/in/mahak-tech-377406365" class="contact-btn" target="_blank">LinkedIn</a>
-</section>
+  <section id="contact" class="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <form action="mailto:mahakofficialbiz@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
-<script>
-// Scroll Animation
-const sections = document.querySelectorAll("section");
-function fadeInOnScroll() {
-  const trigger = window.innerHeight * 0.8;
-  sections.forEach(sec => {
-    const secTop = sec.getBoundingClientRect().top;
-    if (secTop < trigger) sec.classList.add("active");
-  });
-}
-fadeInOnScroll();
-window.addEventListener("scroll", fadeInOnScroll);
-</script>
+  <footer>
+    &copy; 2025 MahakTech. All rights reserved. | Designed by Mahak
+  </footer>
 
+  <script>
+    const typedText = ["Professional Web Development", "Database Management", "Bug Bounty Services", "AI Projects", "Automation Tools"];
+    let i = 0, j = 0, current = '', isDeleting = false;
+
+    function typeEffect() {
+      const span = document.getElementById("typed");
+      if (i < typedText.length) {
+        if (!isDeleting && j <= typedText[i].length) {
+          current = typedText[i].substring(0, j++);
+        } else if (isDeleting && j >= 0) {
+          current = typedText[i].substring(0, j--);
+        }
+
+        span.textContent = current;
+
+        if (!isDeleting && j === typedText[i].length) {
+          isDeleting = true;
+          setTimeout(typeEffect, 1500);
+        } else if (isDeleting && j === 0) {
+          isDeleting = false;
+          i = (i + 1) % typedText.length;
+          setTimeout(typeEffect, 500);
+        } else {
+          setTimeout(typeEffect, isDeleting ? 50 : 100);
+        }
+      }
+    }
+    window.onload = typeEffect;
+  </script>
 </body>
-</html> 
+</html>
