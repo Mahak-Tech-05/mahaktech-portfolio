@@ -8,31 +8,179 @@
   <meta name="author" content="MahakTech" />
   <title>MahakTech | Professional Tech Services</title>
   <link rel="icon" href="favicon.png" type="image/png">
-  
-  
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
-    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif;}
-    html {scroll-behavior: smooth;}
-    body {background: #0d0d0d; color: #fff;}
-    header {background: #111; padding: 20px 40px; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center;}
-    .logo {font-size: 28px; font-weight: bold; color: #00e6e6;}
-    nav a {margin-left: 20px; color: #eee; text-decoration: none; transition: 0.3s;}
-    nav a:hover {color: #00e6e6;}
-    section {padding: 60px 40px;}
-    .hero {min-height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;}
-    .hero h1 {font-size: 40px; margin-bottom: 15px;}
-    .hero span#typed {color: #00e6e6; font-weight: bold;}
-    .hero p {max-width: 600px; font-size: 18px; color: #ccc;}
-    .btn {margin-top: 20px; padding: 12px 30px; background: #00e6e6; color: #111; border: none; font-weight: bold; cursor: pointer; border-radius: 6px; transition: 0.3s;}
-    .btn:hover {background: #00cccc;}
-    .section-title {font-size: 32px; color: #00e6e6; margin-bottom: 30px; text-align: center;}
-    .services, .projects {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;}
-    .card {background: #1a1a1a; padding: 20px; border-radius: 10px; transition: 0.3s ease; border: 1px solid #333;}
-    .card:hover {transform: translateY(-5px); border-color: #00e6e6;}
-    .contact form {max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 15px;}
-    .contact input, .contact textarea {padding: 10px; border: none; border-radius: 6px; background: #2b2b2b; color: #fff;}
-    .contact button {background: #00e6e6; color: #111; font-weight: bold; padding: 10px; border: none; border-radius: 6px; cursor: pointer;}
-    footer {text-align: center; padding: 20px; background: #111; font-size: 14px; color: #aaa;}
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: linear-gradient(120deg, #050505, #0f0f0f);
+      color: #00fff7;
+    }
+
+    header {
+      background: #0d0d0d;
+      padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 20px #00ffff33;
+      animation: fadeDown 1s ease-in-out;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #00fff7;
+      text-shadow: 0 0 8px #00fff7;
+    }
+
+    nav a {
+      margin-left: 20px;
+      color: #eee;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00fff7;
+      text-shadow: 0 0 8px #00fff7;
+    }
+
+    section {
+      padding: 60px 40px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px #00fff7;
+    }
+
+    .hero span#typed {
+      color: #00fff7;
+      font-weight: bold;
+    }
+
+    .hero p {
+      max-width: 600px;
+      font-size: 18px;
+      color: #ccc;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: #00fff7;
+      color: #111;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: 0.3s;
+      border: none;
+      box-shadow: 0 0 15px #00fff7;
+    }
+
+    .btn:hover {
+      background: #00cccc;
+      box-shadow: 0 0 20px #00cccc;
+    }
+
+    .section-title {
+      font-size: 32px;
+      color: #00fff7;
+      margin-bottom: 30px;
+      text-align: center;
+      text-shadow: 0 0 10px #00fff7;
+    }
+
+    .services, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #333;
+      transition: 0.4s ease;
+      box-shadow: 0 0 10px #00fff733;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      border-color: #00fff7;
+      box-shadow: 0 0 15px #00fff7;
+    }
+
+    .contact form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact input, .contact textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background: #2b2b2b;
+      color: #fff;
+    }
+
+    .contact button {
+      background: #00fff7;
+      color: #111;
+      font-weight: bold;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00fff7;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0d0d0d;
+      font-size: 14px;
+      color: #aaa;
+      border-top: 1px solid #222;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeDown {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
 
     @media (max-width: 600px) {
       header {flex-direction: column; align-items: flex-start;}
@@ -144,7 +292,9 @@
         }
       }
     }
+
     window.onload = typeEffect;
   </script>
+
 </body>
 </html>
