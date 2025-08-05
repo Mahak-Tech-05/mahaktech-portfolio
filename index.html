@@ -2,161 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="MahakTech - Web, App, AI, Automation Solutions" />
-  <meta name="keywords" content="MahakTech, Web Development, AI Projects, Automation" />
-  <meta name="author" content="MahakTech" />
-  <title>MahakTech | Future-Ready Tech</title>
-  <link rel="icon" href="favicon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MahakTech - Cyberpunk Web Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary: #00bfff;
-      --bg: #0b0c2a;
-      --card-bg: #12143e;
-      --text: #e6f1ff;
-      --glow: 0 0 15px #00bfff;
-    }
-
+    /* Base Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
-      font-family: 'Orbitron', sans-serif;
     }
 
     body {
-      background: var(--bg);
-      color: var(--text);
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(120deg, #0a0a0a 0%, #0e0e1a 100%);
+      color: #00fff7;
       overflow-x: hidden;
     }
 
     header {
-      background: rgba(5, 6, 30, 0.95);
-      backdrop-filter: blur(10px);
       padding: 20px 40px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      border-bottom: 1px solid #00fff7;
     }
 
-    .logo {
+    header h1 {
       font-size: 28px;
-      font-weight: bold;
-      color: var(--primary);
-      text-shadow: var(--glow);
+      color: #00fff7;
+      text-shadow: 0 0 8px #00fff7;
     }
 
     nav a {
       margin-left: 20px;
-      color: var(--text);
+      color: #00fff7;
       text-decoration: none;
-      transition: 0.3s ease;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
     nav a:hover {
-      color: var(--primary);
+      color: #0ff;
+      text-shadow: 0 0 8px #0ff;
     }
 
-    section {
-      padding: 80px 40px;
+    .section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 12px #00fff7;
+    }
+
+    .section p {
+      font-size: 18px;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .buttons {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .cyber-btn {
+      padding: 15px 30px;
+      color: #0f0f0f;
+      background: #00fff7;
+      border: 2px solid #00fff7;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px #00fff7, inset 0 0 10px #00fff7;
+      text-shadow: 0 0 5px #000;
+    }
+
+    .cyber-btn:hover {
+      background: transparent;
+      color: #00fff7;
+      box-shadow: 0 0 25px #00fff7, inset 0 0 15px #00fff7;
+      transform: scale(1.05);
+    }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      background: #0a0a0a;
+      color: #777;
+      border-top: 1px solid #00fff7;
+    }
+
+    /* Scroll animations */
+    .animate {
       opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.6s ease-out;
+      transform: translateY(50px);
+      transition: all 1s ease-out;
     }
 
-    section.visible {
+    .animate.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    .hero {
-      text-align: center;
-      padding-top: 80px;
-    }
-
-    .hero h1 {
-      font-size: 40px;
-      color: var(--primary);
-      text-shadow: var(--glow);
-    }
-
-    .hero p {
-      font-size: 18px;
-      max-width: 600px;
-      margin: 20px auto;
-      color: #ccc;
-    }
-
-    .btn {
-      margin: 15px 10px;
-      padding: 12px 25px;
-      background: transparent;
-      border: 2px solid var(--primary);
-      color: var(--primary);
-      border-radius: 6px;
-      cursor: pointer;
-      transition: 0.3s ease;
-    }
-
-    .btn:hover {
-      background: var(--primary);
-      color: var(--bg);
-      box-shadow: var(--glow);
-    }
-
-    .section-title {
-      font-size: 28px;
-      text-align: center;
-      margin-bottom: 30px;
-      color: var(--primary);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border: 1px solid #00bfff44;
-      padding: 20px;
-      border-radius: 10px;
-      transition: 0.3s ease;
-      box-shadow: 0 0 10px #00bfff22;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--glow);
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(10, 12, 40, 0.9);
-      font-size: 14px;
-      color: #888;
-    }
-
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       header {
         flex-direction: column;
         align-items: flex-start;
       }
 
-      nav a {
-        display: block;
-        margin: 10px 0 0;
+      nav {
+        margin-top: 10px;
       }
 
-      .hero h1 {
+      .section-title {
         font-size: 28px;
+      }
+
+      .cyber-btn {
+        font-size: 16px;
+        padding: 12px 24px;
       }
     }
   </style>
@@ -164,88 +141,45 @@
 <body>
 
   <header>
-    <div class="logo">MahakTech</div>
+    <h1>MahakTech</h1>
     <nav>
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
       <a href="#connect">Connect</a>
     </nav>
   </header>
 
-  <section class="hero" id="home">
-    <h1>We Build Future-Ready Tech</h1>
-    <p>From Web Development to AI Automation, MahakTech helps startups and businesses scale with innovation.</p>
-    <button class="btn" onclick="document.getElementById('connect').scrollIntoView({ behavior: 'smooth' })">Let’s Connect</button>
+  <section id="about" class="section animate">
+    <h2 class="section-title">About MahakTech</h2>
+    <p>We are a futuristic web studio building cyberpunk-inspired websites that wow clients and convert users. Let us build your dream online presence.</p>
   </section>
 
-  <section id="services">
-    <h2 class="section-title">Our Services</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Web Development</h3>
-        <p>Responsive, dynamic websites with SEO and performance.</p>
-      </div>
-      <div class="card">
-        <h3>Mobile Apps</h3>
-        <p>Android & iOS apps for modern business use cases.</p>
-      </div>
-      <div class="card">
-        <h3>Automation Tools</h3>
-        <p>Streamline workflows using bots and smart tools.</p>
-      </div>
-      <div class="card">
-        <h3>AI Projects</h3>
-        <p>Custom AI solutions, chatbots, and intelligent systems.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2 class="section-title">Our Projects</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Salon Booking System</h3>
-        <p>Full-featured web app with admin, gallery & appointments.</p>
-      </div>
-      <div class="card">
-        <h3>EdTech Platform</h3>
-        <p>Learning platform with live classes, certification & progress tracking.</p>
-      </div>
-      <div class="card">
-        <h3>Guardian AI</h3>
-        <p>AI-powered web platform for emergency detection and alerting.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="connect">
+  <section id="connect" class="section animate">
     <h2 class="section-title">Connect With Us</h2>
-    <div style="text-align: center;">
-      <a href="https://www.linkedin.com" target="_blank"><button class="btn">Join Us on LinkedIn</button></a>
-      <a href="mailto:mahakofficialbiz@gmail.com"><button class="btn">Email Us</button></a>
+    <p>Let’s collaborate on your next project. Join us on LinkedIn or drop us an email.</p>
+    <div class="buttons">
+      <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" class="cyber-btn">🔗 Join Us on LinkedIn</a>
+      <a href="mailto:mahakofficialbiz@gmail.com" class="cyber-btn">📧 Email Us</a>
     </div>
   </section>
 
   <footer>
-    &copy; 2025 MahakTech. Built with 💙 in India. | Designed by Mahak
+    &copy; 2025 MahakTech. All rights reserved.
   </footer>
 
   <script>
-    const sections = document.querySelectorAll("section");
-
-    const scrollAnimate = () => {
-      const triggerBottom = window.innerHeight * 0.85;
-      sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if (sectionTop < triggerBottom) {
-          section.classList.add('visible');
+    // Scroll reveal effect
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
         }
       });
-    };
+    });
 
-    window.addEventListener('scroll', scrollAnimate);
-    window.addEventListener('load', scrollAnimate);
+    document.querySelectorAll('.animate').forEach(section => {
+      observer.observe(section);
+    });
   </script>
+
 </body>
 </html>
