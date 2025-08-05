@@ -3,17 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="MahakTech - Professional Web Development, App Development, and Tech Services to empower your business." />
-  <meta name="keywords" content="MahakTech, Web Development, App Development, SEO, Digital Solutions, Startup, Portfolio" />
+  <title>MahakTech | Cyberpunk Tech Services</title>
+  <meta name="description" content="MahakTech - Web Development, App Development, SEO, Automation & more." />
+  <meta name="keywords" content="MahakTech, Web Development, Cyberpunk, Tech Services" />
   <meta name="author" content="MahakTech" />
-  <title>MahakTech | Professional Tech Services</title>
   <link rel="icon" href="favicon.png" type="image/png">
+
   <style>
-    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif;}
-    html {scroll-behavior: smooth;}
-    body {background: #0a0f1a; color: #ffffff;}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background: linear-gradient(135deg, #0f0f2d, #050516);
+      color: #e0f7ff;
+      overflow-x: hidden;
+    }
     header {
-      background: #070d1b;
+      background: rgba(5, 5, 30, 0.9);
       padding: 20px 40px;
       position: sticky;
       top: 0;
@@ -21,38 +33,36 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #00bfff66;
+      border-bottom: 1px solid #00f0ff33;
     }
     .logo {
       font-size: 28px;
       font-weight: bold;
-      color: #00bfff;
-      text-shadow: 0 0 10px #00bfff;
+      color: #00f0ff;
+      text-shadow: 0 0 8px #00f0ff;
     }
     nav a {
       margin-left: 20px;
-      color: #eee;
+      color: #e0f7ff;
       text-decoration: none;
       transition: 0.3s;
     }
     nav a:hover {
-      color: #00bfff;
-      text-shadow: 0 0 5px #00bfff;
+      color: #00f0ff;
+      text-shadow: 0 0 6px #00f0ff;
     }
-
     section {
-      padding: 60px 40px;
+      padding: 80px 40px;
       opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.8s ease-out;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
     }
-    section.show {
+    section.visible {
       opacity: 1;
       transform: translateY(0);
     }
-
     .hero {
-      min-height: 90vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -61,11 +71,12 @@
     }
     .hero h1 {
       font-size: 40px;
-      margin-bottom: 15px;
-      text-shadow: 0 0 10px #00bfff;
+      margin-bottom: 20px;
+      color: #00f0ff;
+      text-shadow: 0 0 8px #00f0ff;
     }
     .hero span#typed {
-      color: #00bfff;
+      color: #00f0ff;
       font-weight: bold;
     }
     .hero p {
@@ -74,78 +85,77 @@
       color: #ccc;
     }
     .btn {
-      margin-top: 20px;
+      margin-top: 25px;
       padding: 12px 30px;
-      background: #00bfff;
-      color: #000;
+      background: #00f0ff;
+      color: #0d0d0d;
       border: none;
       font-weight: bold;
       cursor: pointer;
       border-radius: 6px;
+      box-shadow: 0 0 10px #00f0ff;
       transition: 0.3s;
     }
     .btn:hover {
-      background: #009fe0;
+      background: #00bcd4;
+      box-shadow: 0 0 15px #00f0ff;
     }
     .section-title {
       font-size: 32px;
-      color: #00bfff;
-      margin-bottom: 30px;
+      color: #00f0ff;
+      margin-bottom: 40px;
       text-align: center;
-      text-shadow: 0 0 10px #00bfff;
+      text-shadow: 0 0 6px #00f0ff;
     }
-
     .services, .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
     .card {
-      background: #121b2e;
+      background: #111121;
       padding: 20px;
       border-radius: 10px;
-      border: 1px solid #00bfff44;
-      box-shadow: 0 0 15px #00bfff22;
-      transition: 0.3s ease;
+      transition: 0.3s;
+      border: 1px solid #00f0ff33;
+      box-shadow: 0 0 10px #00f0ff11;
     }
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 0 20px #00bfff66;
-      border-color: #00bfff;
+      border-color: #00f0ff;
+      box-shadow: 0 0 12px #00f0ff55;
     }
-
-    .connect-buttons {
+    .contact-buttons {
+      text-align: center;
       display: flex;
       justify-content: center;
       gap: 20px;
-      margin-top: 30px;
+      flex-wrap: wrap;
     }
-    .connect-buttons a {
-      padding: 12px 24px;
-      border-radius: 6px;
-      background: #00bfff;
-      color: #000;
-      font-weight: bold;
+    .contact-buttons a {
       text-decoration: none;
-      transition: 0.3s;
     }
-    .connect-buttons a:hover {
-      background: #009fe0;
-    }
-
     footer {
       text-align: center;
       padding: 20px;
-      background: #070d1b;
+      background: #050516;
       font-size: 14px;
       color: #aaa;
-      border-top: 1px solid #00bfff66;
+      border-top: 1px solid #00f0ff33;
     }
 
     @media (max-width: 600px) {
-      header {flex-direction: column; align-items: flex-start;}
-      nav a {margin: 10px 0 0 0; display: block;}
-      .hero h1 {font-size: 28px;}
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav a {
+        margin: 10px 0 0 0;
+        display: block;
+      }
+      .hero h1 {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
@@ -157,65 +167,41 @@
       <a href="#home">Home</a>
       <a href="#services">Services</a>
       <a href="#projects">Projects</a>
-      <a href="#contact">Connect</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <section class="hero" id="home">
-    <h1>We Provide <span id="typed">Professional Tech Solutions</span></h1>
-    <p>MahakTech is your partner in digital growth — from web development to automation, we build it all to help you scale.</p>
-    <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">Join Us</button>
+    <h1>We Provide <span id="typed">Cyberpunk Tech Solutions</span></h1>
+    <p>MahakTech is your partner in digital innovation — from web apps to automation, crafted for tomorrow.</p>
+    <a href="#contact" class="btn">Connect With Us</a>
   </section>
 
   <section id="services">
     <h2 class="section-title">Our Services</h2>
     <div class="services">
-      <div class="card">
-        <h3>Web Development</h3>
-        <p>Responsive, modern websites that attract and convert.</p>
-      </div>
-      <div class="card">
-        <h3>App Development</h3>
-        <p>Android & iOS apps for businesses and startups.</p>
-      </div>
-      <div class="card">
-        <h3>SEO Optimization</h3>
-        <p>Boost your online visibility with technical SEO.</p>
-      </div>
-      <div class="card">
-        <h3>Automation Tools</h3>
-        <p>Save time with smart tools tailored to your business.</p>
-      </div>
-      <div class="card">
-        <h3>Portfolio Websites</h3>
-        <p>Showcase your brand or work with custom portfolios.</p>
-      </div>
+      <div class="card"><h3>Web Development</h3><p>Responsive, modern websites that stand out.</p></div>
+      <div class="card"><h3>App Development</h3><p>Android & iOS apps for any business goal.</p></div>
+      <div class="card"><h3>SEO Optimization</h3><p>Rank higher, grow faster with expert SEO.</p></div>
+      <div class="card"><h3>Automation Tools</h3><p>Boost efficiency with smart solutions.</p></div>
+      <div class="card"><h3>Portfolio Websites</h3><p>Professional identity for individuals & startups.</p></div>
     </div>
   </section>
 
   <section id="projects">
     <h2 class="section-title">Our Projects</h2>
     <div class="projects">
-      <div class="card">
-        <h3>Beauty Studio Website</h3>
-        <p>A luxury salon site with admin, gallery, and booking system.</p>
-      </div>
-      <div class="card">
-        <h3>Student Learning Platform</h3>
-        <p>Courses, progress tracking, doubt solving, and certification system.</p>
-      </div>
-      <div class="card">
-        <h3>Guardian AI</h3>
-        <p>Emergency response web app using AI to detect crisis events.</p>
-      </div>
+      <div class="card"><h3>Beauty Studio Website</h3><p>Luxury salon platform with booking and admin tools.</p></div>
+      <div class="card"><h3>Student Learning Platform</h3><p>Courses, progress tracking, doubt solving, certification.</p></div>
+      <div class="card"><h3>Guardian AI</h3><p>AI-powered emergency response app for real-time events.</p></div>
     </div>
   </section>
 
   <section id="contact">
-    <h2 class="section-title">Connect With Us</h2>
-    <div class="connect-buttons">
-      <a href="https://www.linkedin.com/in/your-profile" target="_blank">Join us on LinkedIn</a>
-      <a href="mailto:mahakofficialbiz@gmail.com">Email Us</a>
+    <h2 class="section-title">Let's Connect</h2>
+    <div class="contact-buttons">
+      <a href="mailto:mahakofficialbiz@gmail.com" class="btn">Email Us</a>
+      <a href="https://www.linkedin.com" target="_blank" class="btn">Join Us on LinkedIn</a>
     </div>
   </section>
 
@@ -224,15 +210,9 @@
   </footer>
 
   <script>
-    const typedText = [
-      "Professional Web Development",
-      "Database Management",
-      "Bug Bounty Services",
-      "AI Projects",
-      "Automation Tools"
-    ];
+    // Typing effect
+    const typedText = ["Cyberpunk Web Development", "Database Management", "Bug Bounty Services", "AI Projects", "Automation Tools"];
     let i = 0, j = 0, current = '', isDeleting = false;
-
     function typeEffect() {
       const span = document.getElementById("typed");
       if (i < typedText.length) {
@@ -241,9 +221,7 @@
         } else if (isDeleting && j >= 0) {
           current = typedText[i].substring(0, j--);
         }
-
         span.textContent = current;
-
         if (!isDeleting && j === typedText[i].length) {
           isDeleting = true;
           setTimeout(typeEffect, 1500);
@@ -252,23 +230,21 @@
           i = (i + 1) % typedText.length;
           setTimeout(typeEffect, 500);
         } else {
-          setTimeout(typeEffect, isDeleting ? 50 : 100);
+          setTimeout(typeEffect, isDeleting ? 40 : 80);
         }
       }
     }
     window.onload = typeEffect;
 
-    // Scroll reveal
+    // Scroll animations
     const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("show");
+          entry.target.classList.add("visible");
         }
       });
-    }, {
-      threshold: 0.1
-    });
+    }, { threshold: 0.1 });
 
     sections.forEach(section => {
       observer.observe(section);
