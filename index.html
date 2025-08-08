@@ -1,185 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MahakTech - Cyberpunk Web Studio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MahakTech - Affordable Professional Websites</title>
+  <meta name="description" content="MahakTech offers affordable, responsive, and professional websites for startups, businesses, and creators.">
+  <meta name="keywords" content="MahakTech, Website Development, Portfolio, Business Websites, Tech Solutions, Freelance Web Developer, Mahak">
+  <meta name="author" content="MahakTech">
+  <link rel="icon" type="image/png" href="favicon.png">
   <style>
-    /* Base Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(120deg, #0a0a0a 0%, #0e0e1a 100%);
-      color: #00fff7;
-      overflow-x: hidden;
-    }
-
-    header {
-      padding: 20px 40px;
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(5px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #00fff7;
-    }
-
-    header h1 {
-      font-size: 28px;
-      color: #00fff7;
-      text-shadow: 0 0 8px #00fff7;
-    }
-
-    nav a {
-      margin-left: 20px;
-      color: #00fff7;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #0ff;
-      text-shadow: 0 0 8px #0ff;
-    }
-
-    .section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .section-title {
-      font-size: 36px;
-      margin-bottom: 20px;
-      text-shadow: 0 0 12px #00fff7;
-    }
-
-    .section p {
-      font-size: 18px;
-      color: #ccc;
-      line-height: 1.6;
-    }
-
-    .buttons {
-      margin-top: 40px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .cyber-btn {
-      padding: 15px 30px;
-      color: #0f0f0f;
-      background: #00fff7;
-      border: 2px solid #00fff7;
-      font-weight: bold;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 18px;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 15px #00fff7, inset 0 0 10px #00fff7;
-      text-shadow: 0 0 5px #000;
-    }
-
-    .cyber-btn:hover {
-      background: transparent;
-      color: #00fff7;
-      box-shadow: 0 0 25px #00fff7, inset 0 0 15px #00fff7;
-      transform: scale(1.05);
-    }
-
-    footer {
-      padding: 20px;
-      text-align: center;
-      background: #0a0a0a;
-      color: #777;
-      border-top: 1px solid #00fff7;
-    }
-
-    /* Scroll animations */
-    .animate {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 1s ease-out;
-    }
-
-    .animate.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav {
-        margin-top: 10px;
-      }
-
-      .section-title {
-        font-size: 28px;
-      }
-
-      .cyber-btn {
-        font-size: 16px;
-        padding: 12px 24px;
-      }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+    * {margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body {background:#0f0c29;color:#fff;scroll-behavior:smooth;}
+    .navbar {display:flex;justify-content:space-between;align-items:center;padding:20px 8%;background:#14163c;position:sticky;top:0;z-index:999;}
+    .logo {font-size:32px;font-weight:700;background:linear-gradient(45deg,#00f0ff,#ff00c8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .nav-links {display:flex;gap:25px;list-style:none;}
+    .nav-links a {color:#fff;text-decoration:none;position:relative;font-weight:600;}
+    .nav-links a::after {content:"";position:absolute;width:0;height:2px;left:0;bottom:-6px;background:linear-gradient(90deg,#00f0ff,#ff00c8);transition:.4s;}
+    .nav-links a:hover::after {width:100%;}
+    .hero {display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:100vh;background:radial-gradient(circle at top right,#1e215d,#0f0c29);}
+    .hero h1 {font-size:48px;margin-bottom:20px;}
+    .hero p {font-size:22px;margin-bottom:30px;color:#ccc;}
+    .hero a {padding:15px 30px;background:linear-gradient(45deg,#00f0ff,#ff00c8);color:#fff;border-radius:50px;text-decoration:none;font-weight:600;transition:.3s;}
+    .hero a:hover {transform:scale(1.05);}
+    section {padding:80px 20px;text-align:center;}
+    h2 {font-size:40px;margin-bottom:20px;}
+    .container {max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
+    .card {background:#1b1e4a;padding:30px;border-radius:15px;border:2px solid #202461;transition:.4s;}
+    .card:hover {transform:translateY(-10px);box-shadow:0 0 20px #00f0ff;border-color:#00f0ff;}
+    .card h3 {font-size:24px;margin-bottom:15px;background:linear-gradient(45deg,#00f0ff,#ff00c8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .card p {font-size:16px;color:#ccc;}
+    .contact-btn {padding:15px 30px;background:linear-gradient(45deg,#00f0ff,#ff00c8);color:#fff;border-radius:50px;text-decoration:none;display:inline-block;margin:15px;transition:.3s;}
+    .contact-btn:hover {transform:scale(1.1);}
+    @media(max-width:768px){
+      .navbar{flex-direction:column;}
+      .nav-links{flex-direction:column;margin-top:15px;}
+      .hero h1{font-size:36px;}
+      .hero p{font-size:18px;}
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>MahakTech</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#connect">Connect</a>
-    </nav>
-  </header>
+<header>
+<nav class="navbar">
+  <div class="logo">Mahak<span style="color:#00f0ff;">Tech</span></div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+</header>
 
-  <section id="about" class="section animate">
-    <h2 class="section-title">About MahakTech</h2>
-    <p>We are a futuristic web studio building cyberpunk-inspired websites that wow clients and convert users. Let us build your dream online presence.</p>
-  </section>
+<section id="home" class="hero">
+  <h1>Welcome to Mahak<span style="color:#00f0ff;">Tech</span></h1>
+  <p>Affordable & Professional Web Development Solutions</p>
+  <a href="#services">Explore Services</a>
+</section>
 
-  <section id="connect" class="section animate">
-    <h2 class="section-title">Connect With Us</h2>
-    <p>Let’s collaborate on your next project. Join us on LinkedIn or drop us an email.</p>
-    <div class="buttons">
-      <a href="https://www.linkedin.com/in/mahaktech" target="_blank" class="cyber-btn">🔗 Join Us on LinkedIn</a>
-      <a href="mailto:saxenamahak612@gmail.com" class="cyber-btn">📧 Email Us</a>
-    </div>
-  </section>
+<section id="services">
+  <h2>Our <span style="color:#00f0ff;">Services</span></h2>
+  <div class="container">
+    <div class="card"><h3>Business Websites</h3><p>Responsive, SEO-optimized business sites for every industry.</p></div>
+    <div class="card"><h3>Portfolios</h3><p>Clean, attractive portfolios to showcase your talent.</p></div>
+    <div class="card"><h3>Landing Pages</h3><p>High-converting, fast landing pages for your product or service.</p></div>
+    <div class="card"><h3>E-commerce</h3><p>Affordable e-commerce stores with secure payment integration.</p></div>
+  </div>
+</section>
 
-  <footer>
-    &copy; 2025 MahakTech. All rights reserved.
-  </footer>
+<section id="projects">
+  <h2>Our <span style="color:#00f0ff;">Projects</span></h2>
+  <div class="container">
+    <div class="card"><h3>Student Projects</h3><p>Mentored multiple student projects in AI & Web Development.</p></div>
+    <div class="card"><h3>Startup Portfolios</h3><p>Designed websites for tech startups showcasing their solutions.</p></div>
+    <div class="card"><h3>Local Businesses</h3><p>Built beautiful sites for local salons, shops, and services.</p></div>
+  </div>
+</section>
 
-  <script>
-    // Scroll reveal effect
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    });
-
-    document.querySelectorAll('.animate').forEach(section => {
-      observer.observe(section);
-    });
-  </script>
+<section id="contact">
+  <h2>Let’s <span style="color:#00f0ff;">Connect</span></h2>
+  <p>Want a professional website? Let’s discuss your project.</p>
+  <a href="mailto:saxenamahak612@gmail.com" class="contact-btn">📧 Email</a>
+  <a href="https://www.linkedin.com/in/mahak-tech-377406365" class="contact-btn" target="_blank">LinkedIn</a>
+</section>
 
 </body>
 </html>
